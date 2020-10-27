@@ -172,5 +172,23 @@ echo 'Hello World <br> <br>';
 
     $nomes =['Nicole<br>', 'Leticia', 'Eliane'];
     echo $nomes[0]; //Nicole
-    $nomes[0]='Batata'; //O valor da var nomes passa a ser ['batata', 'Leticia', 'Eliane']
+    $nomes[0]='Batata<br><br>'; //O valor da var nomes passa a ser ['batata', 'Leticia', 'Eliane']
     echo $nomes[0]; //exibe Batata
+
+//Arrays: Chave-Valor (Com o array chave-valor você pode usar palavras-chave ao invés de índices para armazenas valores)  
+
+    $array=[
+        'nome'=>'Nicole ',
+        'sobrenome'=>'Silvestrini<br>'
+    ];//  => serve p/ acessar propriedades ou métodos de um objeto
+
+    echo $array['nome'];//exibe Nicole
+    echo $array['sobrenome'];//exibe Silvestrini
+
+//podemos alterar o valor de uma chava da mesma forma   
+
+    $array['sobrenome']='pereira<br><br>';
+
+//O array passa a ser 'nome'=>'Nicole', 'Sobrenome'=>'Pereira'   
+
+   echo $array['sobrenome']; //exibe pereira 
