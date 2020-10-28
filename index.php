@@ -240,3 +240,166 @@ echo 'Hello World <br> <br>';
     }
 
     echo soma(2, 3);//exibe 5
+
+
+
+
+//é comum ter um return vazio dentro de condicionais em funções que não retornam valor
+
+/*    function teste($nome){
+        if($nome=='Nicole'){
+            echo $nome.' =Nicole';
+            return;
+        }
+        echo'A função continua se o $nome não for igual a Nicole'
+    }
+
+    teste('Nicole'); //exibe o 1º echo
+    teste('Leticia'); //exibe o 2º echo (erro)*/
+
+//se não tivesse o return na função anterior o teste('Nicole'), exibiria as duas mensagens!!!
+
+
+
+
+//Também não é obrigatório as funções terem argumentos, ela pode ser usada apenas para evitar repetição de cód
+
+    function teste(){
+            echo '<br><br>mensagem 1<br>';
+            echo 'mensagem 2<br>';
+            echo 'mensagem 3<br><br>';
+    }
+
+    teste();
+    teste();
+    teste(); 
+//O cód acima exibe 9 mensagens, (é chamda 3 vezes
+
+// Funções globais: (funções que o próprio PHP disponibiza para você)
+
+//Retornar números de itens em um array: (??)
+
+    $array1=[5,9,7,5,3,8,9];
+    $array2=['Nicole', 'Leticia', 'Eliane'];
+
+    echo count($array1);//exibe 7
+    echo count($array2);//exibe 3
+
+//Verificar se determinada string possui outra:
+
+    $frase = 'php é uma linguagem de programação';
+    if(strpos($frase, 'linguagem')!==false){
+        echo '<br><br>A var $frase possui a palavra "linguagem"';
+    }
+
+//Mudar uma parte de uma string por outra:
+
+    $frase='<br><br>PHP é uma linguagem de programação<br>';
+    echo str_replace('PHP', 'JS', $frase); //exibe Js é uma ...
+
+//Ordernar um array:
+
+    $array=[5,9,7,3,8];
+
+    sort($array);
+//valor de $array passa a ser [3,5,7,8,9] 
+
+
+//Comandos de repetição:
+
+    for($i=0; $i<10; $i++){
+        echo '<br>' . $i . ' ';
+    } //No final é p/ exibir: 0 1 2 3 4 5 6 7 8 9
+
+
+//Uma das principais características do ´for´ é ter meio que um contador embutido, podemos aproveitar o contador para fazer condicionais:
+
+    for($i=1; $i<=5; $i++){
+        if($i == 3){
+            echo '<br><br>$i = 3';
+        }
+        if($i==5){
+            echo '<br>$i = 5<br><br>';
+        }
+    }
+
+
+//dá para usá-lo quando for percorrer arrays usando a função global 
+
+    $nomes=['Nicole', 'Eliane', 'Leticia', 'Silvia', 'Cleber'];
+
+    for($i = 0; $i<count($nomes); $i++){
+        echo $nomes[$i].', ';
+    } //será exibido [Nicole, Eliane, Leticia, Silvia, Cleber,]
+
+
+//While:
+
+    $i=0;
+
+    while($i<10){
+        echo '<br>' . $i . ' ';
+        $i++;
+    }//No final é p/ exibir: 0 1 2 3 4 5 6 7 8 9
+
+
+
+//Do ... While (Condição vem no final, garantindo que o cód seja executado ao menos uma vez)
+
+    $i=0;
+
+    do{
+        echo '<br><br>' . $i . ' ';
+
+        $i++ ;
+    }while($i>10); //exibe 0
+
+
+    $nome = 'Nicole';
+
+    do{
+        echo $nome;
+    }while($nome!='Nicole');
+
+
+//foreach (você pode percorrer arrays comuns e chave-valor de maneira fácil sem precisar de um contador)
+
+    $array=[1,3,5,4,6,8];
+
+    foreach($array as $item){
+        echo '<br>' . $item . ' ';
+    } //exibe 1 3 5  4 6 8
+
+//No exemplo acima, o foreach repete a mesma quantidade de itens do array c/ a var $item possuindo o valor do item referente aquela repetição
+
+
+
+
+    $nomes=['<br><br>Nicole', 'Leticia', 'Eliane'];
+
+    foreach($nomes as $nome){
+        echo $nome . ', ';
+    }   //exibe Nicole, Letica, Eliane,
+
+
+
+//arrays chave-valor c/ foreach:
+
+    $dados=['nome'=>'Nicole', 'sobrenome'=>'Silvestrini', 'idade'=>17];
+
+    foreach($dados as $chave=>$valor){
+        echo '<br>'.$chave . ': ' . $valor ;
+    } //Nome: nicole sobrenome: silvestrini idade: 17
+    
+    
+    
+    
+//Comandos de repetição: continue e break:
+
+    for($i=0; $i<10; $i++){
+        if($i==4 || $i==6){continue;}
+        if($i==8){break;}
+        echo '<br><br>'.$i . ' ';
+    }
+    echo 'Final';
+
