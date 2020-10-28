@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-br"> 
+
+    <head>
+        <meta charset ="utf-8">
+        <title>abcd</title>
+    </head>
+
+    <body>
+        <!-- php pode ser usado em conjunto com o HTML-->
+        <b><?php echo 2+3;?></b>
+
+        <!--Podemos também fazer condicionais e enviar determinado HTML para o navegador dependendo delas-->
+        
+        <?php
+            $nome='Nicole';
+
+              if($nome=='Nicole') { ?>
+              <i>O valor de $nome é <?= $nome;?></i>
+              <?php}else{?>
+              <i>O valor de $nome não é Nicole, seu valor é <?=$nome;?></i>}
+        ?>
+        <hr>
+        <?php
+            $nomes=['Nicole', 'Eliane', 'Leticia'];
+        ?>
+        <ul>
+            <?php foreach($nomes as $nome){?>
+            <li><?=$nome;?></li>
+            <?php}?></ul>    
+    </body>
+
+</html>
