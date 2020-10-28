@@ -11,7 +11,7 @@ echo 'Hello World <br> <br>';
     echo $idade . '<br><br>';
 
 //var: Números
-
+//mod 
     $var1 = 1.5;
     $var2 = 3+2;
     $var3 = $var1 - $var2;
@@ -191,4 +191,52 @@ echo 'Hello World <br> <br>';
 
 //O array passa a ser 'nome'=>'Nicole', 'Sobrenome'=>'Pereira'   
 
-   echo $array['sobrenome']; //exibe pereira 
+    echo $array['sobrenome']; //exibe pereira
+
+
+
+//Arrays: Multidimensional (são arrays que possuem outros arrays dentro)
+    
+    $array=[[5,3,7], [2,9,6]];
+    echo $array[0][2]; //exibe 7
+    echo $array[1][0]; //exibe 2
+
+
+//Podemos fazer a mesma coisa com o array chave-valor
+
+    $array=[
+            ['nome'=>'<br><br>Nicole<br>', 'sobrenome'=>'Silvestrini'],
+            ['nome'=>'Leticia', 'sobrenome'=>'Garrio<br><br>']
+    ];
+
+    echo $array[0]['nome'];//exibe Nicole
+    echo $array[1]['sobrenome'];//exibe Garrio
+
+
+
+
+
+//incluir ainda mais arrays dentro de arrays
+    
+    $array=[
+            [
+                [4,6,0], [3,7,2]
+            ],
+            //índice1
+            [
+                //índice0
+                [2,8,5], [1,9,3]
+            ]
+    ];
+
+    echo $array[1][0][2]; //exibe 5
+
+
+
+//Funções (modo de dar nome a um bloco de código e chamá-lo quantas vezes quiser, mudando o valor de apenas algumas coisas ou nenhuma)
+
+    function soma($num1, $num2){
+        return $num1 + $num2;
+    }
+
+    echo soma(2, 3);//exibe 5
