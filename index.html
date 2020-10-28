@@ -19,15 +19,20 @@
               <i>O valor de $nome é <?= $nome;?></i>
               <?php}else{?>
               <i>O valor de $nome não é Nicole, seu valor é <?=$nome;?></i>}
-        ?>
+              ?> <!--<?= $variavel; ?>-->
         <hr>
+
         <?php
-            $nomes=['Nicole', 'Eliane', 'Leticia'];
-        ?>
-        <ul>
-            <?php foreach($nomes as $nome){?>
-            <li><?=$nome;?></li>
-            <?php}?></ul>    
-    </body>
+            $nomes = ['Nicole', 'Eliane', 'Leticia'];
+            ?>
+            <ul>
+            <?php foreach($nomes as $nome) { ?>
+            <li><?= $nome; ?></li>
+            <?php } ?>
+            </ul>
+       <hr>
+
+
+     </body>
 
 </html>

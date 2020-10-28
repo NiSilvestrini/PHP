@@ -403,3 +403,43 @@ echo 'Hello World <br> <br>';
     }
     echo 'Final';
 
+
+
+//função global include (dicionar todo o código de um arquivo PHP em outro)
+
+
+    /*
+     <?php
+    // arquivo index.php
+
+    $dados = [
+    'nome' => 'Alefe',
+    'sobrenome' => 'Souza',
+    'idade' => 21
+    ];
+
+    include('views/index.php');
+
+//Agora o código do arquivo index.php dentro da pasta views
+
+    <!-- views/index.php -->
+    <p><b>Nome:</b> <?= $dados['nome']; ?></p>
+    <p><b>Sobrenome:</b> <?= $dados['sobrenome']; ?></p>
+    <p><b>Idade:</b> <?= $dados['idade']; ?> anos</p>
+     
+//Ao abrir o arquivo index.php, o código enviado para o navegador será:
+
+    <p><b>Nome:</b> Alefe</p>
+    <p><b>Sobrenome:</b> Souza</p>
+    <p><b>Idade:</b> 21 anos</p>    
+    
+//Que exibirá o seguinte no navegador:
+    
+    Nome: Alefe
+
+    Sobrenome: Souza
+
+    Idade: 21 anos
+    */
+
+
