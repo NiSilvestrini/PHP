@@ -408,38 +408,80 @@ echo 'Hello World <br> <br>';
 //função global include (dicionar todo o código de um arquivo PHP em outro)
 
 
-    /*
+/*
      <?php
     // arquivo index.php
 
     $dados = [
     'nome' => 'Alefe',
-    'sobrenome' => 'Souza',
-    'idade' => 21
-    ];
+    'sobrenome' => 'Souza', 'idade' => 21 ];
 
     include('views/index.php');
 
-//Agora o código do arquivo index.php dentro da pasta views
+    //Agora o código do arquivo index.php dentro da pasta views
 
     <!-- views/index.php -->
     <p><b>Nome:</b> <?= $dados['nome']; ?></p>
     <p><b>Sobrenome:</b> <?= $dados['sobrenome']; ?></p>
     <p><b>Idade:</b> <?= $dados['idade']; ?> anos</p>
      
-//Ao abrir o arquivo index.php, o código enviado para o navegador será:
+    //Ao abrir o arquivo index.php, o código enviado para o navegador será:
 
     <p><b>Nome:</b> Alefe</p>
     <p><b>Sobrenome:</b> Souza</p>
     <p><b>Idade:</b> 21 anos</p>    
     
-//Que exibirá o seguinte no navegador:
+    //Que exibirá o seguinte no navegador:
     
     Nome: Alefe
 
     Sobrenome: Souza
 
     Idade: 21 anos
-    */
+*/
+
+
+//Banco de dados
+
+    //praticamente tudo o que você faz em um site ou aplicativo online vai para um banco de dados, como seu cadastro em algum site, algo que você posta no Facebook ou Twitter, o post em um blog, fica tudo armazenado no banco de dados das respectivas empresas.
+
+    //phpMyAdmin (é um painel escrito em PHP para você checar os dados de bancos de dados MySQL existentes e criar novos dados)
+    //A_I, auto increment: significa que não precisamos preenchê-lo manualmente, pois a cada novo registro ele aumentará em 1 automaticamente;
+    //VARCHAR (aceita qualquer caractere)
+    //CRUD (Create, Read, Update, Delete)
+
+//PDO
+
+    //Para conectar no banco de dados do XAMPP, usaremos o seguinte código:
+
+    $db_host='localhost';
+    $db_nome='php_tutorial';
+    $db_user='root';
+    $db_senha='';
+
+    $conexao=new PDO("mysql:host=$db_host;dbname=$db_nome;charset=utf8", $db_user, $db_senha);
+
+//fazer um CRUD utilizando o PDO :
+
+//Create
+
+    $conexao=new PDO('mysql:host=localhost;dbname=php_tutorial;charset=utf8', 'root', '');
+
+    $query=$conexao->prepare('INSERT INTO tabela_teste (nome, sobrenome, idade) VALUES (:nome, :sobrenome, :idade)');
+
+    $query->bindValue(':nome', 'Leticia');
+    $query->bindValue('sobrenome', 'Silvestrini');
+    $query->bindValue(':idade', 9);
+
+    $query->execute();
+
+    //criamos nossa conexão com o banco de dados, então declaramos uma variável $query onde colocaremos nossa instrução SQL que queremos executar no banco de dados, no caso é um INSERT na tabela tabela_teste que criamos no phpMyAdmin, note que a query possui os parâmetros :nome, :sobrenome e :idade, esses valores serão substituídos pelos bindValue no código logo em seguida.
+
+
+    //Com o método bindValue podemos substituir parâmetros na nossa query SQL, no próximo parágrafo eu explico o por quê disso, no primeiro argumento colocando qual parâmetro queremos substituir, e em seguida o seu valor, então usamos o comando $query->execute() para executar nossa query, que no final executará o seguinte comando no banco de dados:
+
+    //INSERT INTO tabela_teste VALUES (nome, sobrenome, idade) VALUES ('Leticia', 'Silvestrini', 9);
+
+
 
 

@@ -15,23 +15,22 @@
         <?php
             $nome='Nicole';
 
-              if($nome=='Nicole') { ?>
-              <i>O valor de $nome é <?= $nome;?></i>
-              <?php}else{?>
-              <i>O valor de $nome não é Nicole, seu valor é <?=$nome;?></i>}
-              ?> <!--<?= $variavel; ?>-->
+              if($nome=='Nicole') : ?>
+              <p><i>O valor de $nome é <?= $nome;?></i></p>
+              <?php}else:?>
+              <p><i>O valor de $nome não é Nicole, seu valor é <?=$nome;?></i></p><?php endif;?>
+               <!--<?= $variavel; ?>-->
         <hr>
 
         <?php
-            $nomes = ['Nicole', 'Eliane', 'Leticia'];
-            ?>
+            $nomes = ['Nicole' , 'Leticia' , 'Eliane']; ?>
             <ul>
-            <?php foreach($nomes as $nome) { ?>
+            <?php foreach($nomes as $nome) : ?>
             <li><?= $nome; ?></li>
-            <?php } ?>
+            <?php endforeach ?>
             </ul>
-       <hr>
-
+       
+            <!--Embora pareça muito legal, não é uma boa prática deixar lógica e HTML no mesmo arquivo, pois conforme o projeto cresce, pode deixar o código feio e confuso, o ideal seria utilizar algum framework para gerenciar melhor o código PHP (controller) e o HTML (view)-->
 
      </body>
 
